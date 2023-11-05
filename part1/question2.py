@@ -15,7 +15,8 @@
 # it. As always, there is a test suite that checks the result. It is in 
 # `question2_test.py.`
 
-swapper = None
+def swapper(t): #Swapper function 
+  return t if len(t) < 2 else (t[1], t[0]) #Conditional that verify if there at least two items and if its true swap those items
 
 def run_swapper(list_of_tuples):
   return list(map(swapper, list_of_tuples))
