@@ -26,8 +26,44 @@
 # formulas and their outputs in the test file, `question3_test.py`.
 
 # This function should return an oven instance!
+
+class Oven: #Class Oven for add, freeze, boil, wait and get_output methods
+
+  #Function to declare instance variables for 3 asserts
+  def __init__(self):
+    self.ingredients = [] #Declare ingredients as a list
+    self.temperature: int = 0 #Declare temperature variable as a integer
+    self.output = None #Declare output as none
+
+  
+  #Add function with item argument 
+  def add(self, item): 
+    self.ingredients.append(item) #Append to the ingredients list
+
+  #Freeze function with snow output
+  def freeze(self):
+    self.output = "snow"
+
+  #Boil function with pizza and gold output
+  def boil(self):
+    if set(self.ingredients) == set({"cheese", "dough", "tomato"}): #Conditional for pizza ingredients
+      self.output = "pizza"
+    else: #Else for gold
+      self.output = "gold"
+    print(self.ingredients)
+
+  #Wait function with text output
+  def wait(self):
+    self.output = "nothing happened"
+
+  #Get output function to show the result
+  def get_output(self):
+    print(self.output) 
+    return self.output
+  
+
 def make_oven():
-  None
+  return Oven()
 
 def alchemy_combine(oven, ingredients, temperature):
   
